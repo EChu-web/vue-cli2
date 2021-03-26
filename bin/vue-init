@@ -1,16 +1,16 @@
 #!/usr/bin/env node
 
-const download = require('download-git-repo')
-const program = require('commander')
-const exists = require('fs').existsSync
+const download = require('download-git-repo') // git下载
+const program = require('commander')  
+const exists = require('fs').existsSync   // exists(path):检测路径是否存在，返回boolean
 const path = require('path')
 const ora = require('ora')
-const home = require('user-home')
-const tildify = require('tildify')
+const home = require('user-home')   // 获取user-home路径
+const tildify = require('tildify')  // 将绝对路径转换为带~的路径，/Users/sindresorhus/dev → ~/dev
 const chalk = require('chalk')
 const inquirer = require('inquirer')
-const rm = require('rimraf').sync
-const logger = require('../lib/logger')
+const rm = require('rimraf').sync   // unix命令 删除文件 
+const logger = require('../lib/logger')   // 日志打印工具
 const generate = require('../lib/generate')
 const checkVersion = require('../lib/check-version')
 const warnings = require('../lib/warnings')
